@@ -6,18 +6,6 @@
 // [] criar função de alterar a cor usando rgb()
 // [] usar Math.random() e Math.floor() ou parseInt()
 
-const body = document.body;
-const escutaClick = document.getElementById('troca-cor');
-
-escutaClick.addEventListener('click', () => {
-    const rAleatorio = geraInteiro();
-    const bAleatorio = geraInteiro();
-    const gAleatorio = geraInteiro();
-
-    body.style.backgroundColor = 'rgb(' + rAleatorio + ',' + gAleatorio + ',' + bAleatorio + ')';
-    console.log('rgb(' + rAleatorio + ',' + bAleatorio + ',' + rAleatorio + ')')
-
-});
 
 // function geraInteiro() {
 //     const n = parseInt(Math.random() * 255);
@@ -37,6 +25,21 @@ escutaClick.addEventListener('click', () => {
 // [X] anonymous function (Quando ela não precisa ser nomeada)
 
 // [X] arrow function ( é => no lugar da função)
-geraInteiro = n => parseInt(Math.random() * n);
 
 // [] template strings
+
+
+
+const body = document.body;
+const escutaClick = document.getElementById('troca-cor');
+
+escutaClick.addEventListener('click', () => {
+    const rAleatorio = geraInteiro(255);
+    const bAleatorio = geraInteiro(255);
+    const gAleatorio = geraInteiro(255);
+
+    body.style.backgroundColor = 'rgb(' + rAleatorio + ',' + gAleatorio + ',' + bAleatorio + ')';
+    console.log('rgb(' + rAleatorio + ',' + bAleatorio + ',' + rAleatorio + ')')
+
+});
+geraInteiro = n => parseInt(Math.random() * n);
