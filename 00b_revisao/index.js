@@ -30,13 +30,34 @@
 
 
 
+// const body = document.body;
+// const escutaClick = document.getElementById('troca-cor');
+// body.style.backgroundColor = 'purple'
+
+// escutaClick.addEventListener('click', () => {
+//     const rAleatorio = geraInteiro(255);
+//     const bAleatorio = geraInteiro(255);
+//     const gAleatorio = geraInteiro(255);
+
+//     body.style.backgroundColor = 'rgb(' + rAleatorio + ',' + gAleatorio + ',' + bAleatorio + ')';
+//     console.log('rgb(' + rAleatorio + ',' + bAleatorio + ',' + rAleatorio + ')')
+
+// });
+// geraInteiro = n => parseInt(Math.random() * n);
+
+
+
 const body = document.body;
 const escutaClick = document.getElementById('troca-cor');
+body.style.backgroundColor = 'purple'
 
-escutaClick.addEventListener('click', () => {
-    const rAleatorio = geraInteiro(255);
-    const bAleatorio = geraInteiro(255);
-    const gAleatorio = geraInteiro(255);
+// escutaClick.addEventListener('click', () => {
+
+class mudaCor{
+    constructor(){
+    this.rAleatorio = geraInteiro(255);
+    this.bAleatorio = geraInteiro(255);
+    this.gAleatorio = geraInteiro(255);
 
     body.style.backgroundColor = 'rgb(' + rAleatorio + ',' + gAleatorio + ',' + bAleatorio + ')';
     console.log('rgb(' + rAleatorio + ',' + bAleatorio + ',' + rAleatorio + ')')
