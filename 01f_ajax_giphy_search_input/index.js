@@ -6,7 +6,6 @@ const formulario = document.querySelector('#formulario')
 const input = document.querySelector('#gifInput')
 const div = document.querySelector('#root')
 
-
 formulario.addEventListener('submit', pegaValor)
 
 function pegaValor(evento) {
@@ -20,8 +19,6 @@ function pegaValor(evento) {
     request.onreadystatechange = pegaImg;
     request.open('GET', urlRequest);
     request.send();
-
-
 
 
     function pegaImg() {
@@ -39,12 +36,3 @@ function pegaValor(evento) {
         }
     }
 }
-
-// valorInput.addEventListener('submit', pegaValor)
-
-// function pegaValor(e) {
-//     valorInput.value
-
-//     e.preventDefault();
-//     console.log(pegaValor)
-// }
