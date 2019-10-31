@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // fetch da imagem
 // [] adicionar a tag <script> no html
 // [] verificar se está lendo index.js
@@ -56,7 +55,6 @@ function mostraGif(){
 //     <img src = ${json.data[0].images.original.url}>
 // `
 // }
-=======
 // XMLHttpRequest na rota random
 
 const urlRequest = `http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC`
@@ -77,4 +75,3 @@ function mostraGif() {
     img.src = imgUrl;
   }
 }
->>>>>>> f867572238c8dcffe2dd99a7c17641c882d5fba1

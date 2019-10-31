@@ -21,3 +21,9 @@ function mostraGif() {
    `
   }
 }
+
+
+const minhaChave =
+const queroPegar
+
+

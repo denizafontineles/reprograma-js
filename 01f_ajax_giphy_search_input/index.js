@@ -10,10 +10,12 @@ formulario.addEventListener('submit', pegaValor)
 
 function pegaValor(evento) {
     evento.preventDefault()
-    let valorUsuario = input.value.trim()
+    div.innerHTML = ''
+    let valorUsuario = input.value
+    input.value = ''
 
 
-    const urlRequest = `http://api.giphy.com/v1/gifs/search?q=${valorUsuario}&api_key=dc6zaTOxFJmzC&limit=3&offset=0`
+    const urlRequest = `http://api.giphy.com/v1/gifs/search?q=${valorUsuario}&api_key=dc6zaTOxFJmzC&limit=10&offset=0`
 
     const request = new XMLHttpRequest()
     request.onreadystatechange = pegaImg;
@@ -25,14 +27,20 @@ function pegaValor(evento) {
         if (request.readyState === 4 && request.status === 200) {
             const response = request.response;
             const json = JSON.parse(response);
+            const data = json.data;
 
-            console.log(json)
-
-            div.innerHTML = `
-        <img src=${json.data[0].images.original.url}>
-        <img src=${json.data[1].images.original.url}>
-        <img src=${json.data[2].images.original.url}>
-     `
+            for (let i = 0; i < data.length; i++) {
+                const element = data[i];
+                div.innerHTML += `
+            <img src=${element.images.original.url}>
+            `
+            }
         }
     }
 }
+
+
+// console.error
+// console.warn
+
+
