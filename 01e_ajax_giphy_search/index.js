@@ -1,7 +1,7 @@
 // XMLHttpRequest na rota search
 
 const quero = 'rainbow'
-const urlRequest = `http://api.giphy.com/v1/gifs/search?q=${quero}&api_key=dc6zaTOxFJmzC&limit=3&offset=0`
+const urlRequest = `http://api.giphy.com/v1/gifs/search?q=batman&api_key=dc6zaTOxFJmzC&limit=3&offset=0`
 
 const request = new XMLHttpRequest()
 request.onreadystatechange = mostraGif;
@@ -21,9 +21,5 @@ function mostraGif() {
    `
   }
 }
-
-
-const minhaChave =
-const queroPegar
 
 
