@@ -1,51 +1,50 @@
-// fetch da imagem
-// [] adicionar a tag <script> no html
-// [] verificar se está lendo index.js
-// [] usar o endpoint de busca
-// [] usar o método fetch() para a url da API Giphy
-// [] transformar o dado recebido
-// [] apresentar <img>
+// // fetch da imagem
+// // [] adicionar a tag <script> no html
+// // [] verificar se está lendo index.js
+// // [] usar o endpoint de busca
+// // [] usar o método fetch() para a url da API Giphy
+// // [] transformar o dado recebido
+// // [] apresentar <img>
 
-const input = document.querySelector('#gifInput');
-<<<<<<< HEAD
-const bt = document.querySelector('#gifButton');
-const div = document.querySelector('#root')
+// const input = document.querySelector('#gifInput');
+// const bt = document.querySelector('#gifButton');
+// const div = document.querySelector('#root')
 
-bt.addEventListener('click', (evento) => clicarBt(evento));
+// bt.addEventListener('click', (evento) => clicarBt(evento));
 
-function clicarBt(ev) {
-    ev.preventDefault();
-    const valorInput = input.value
-    console.log(valorInput)
-    const link = `http://api.giphy.com/v1/gifs/search?q=${valorInput}&api_key=dc6zaTOxFJmzC&limit=2&offset=0`
+// function clicarBt(ev) {
+//     ev.preventDefault();
+//     const valorInput = input.value
+//     console.log(valorInput)
+//     const link = `http://api.giphy.com/v1/gifs/search?q=${valorInput}&api_key=dc6zaTOxFJmzC&limit=2&offset=0`
 
-    fetch(link)
+//     fetch(link)
 
-        .then(response => response.json())
-        .then(dados => mostraData(dados))
-        .catch(erro => mostraErro(erro))
-}
+//         .then(response => response.json())
+//         .then(dados => mostraData(dados))
+//         .catch(erro => mostraErro(erro))
+// }
 
-mostraErro = (erro) => {
-    div.innerHTML = `<h1> ${erro} </h1>`
-}
+// mostraErro = (erro) => {
+//     div.innerHTML = `<h1> ${erro} </h1>`
+// }
 
 
-function mostraData(dados) {
-    if (dados.message) {
-        mostraErro(dados.message)
+// function mostraData(dados) {
+//     if (dados.message) {
+//         mostraErro(dados.message)
 
-    } else {
-        const arr = dados
-        arr.forEach(element => {
-            const scrImg = element.images.original.url
-            div.innerHTML += `
-            <img scr=${scrImg}>
-            `
-        })
-    }
+//     } else {
+//         const arr = dados
+//         arr.forEach(element => {
+//             const scrImg = element.images.original.url
+//             div.innerHTML += `
+//             <img scr=${scrImg}>
+//             `
+//         })
+//     }
 
-}
+// }
 
 // =====================================================================================================================
 
@@ -69,7 +68,7 @@ function mostraData(dados) {
 //             }
 //             return resposta.json()
 //         })
-        
+
 //         .then(json => mostraData (json))
 //         .catch(e => mostraErro(e))
 // }
@@ -91,7 +90,7 @@ function mostraData(dados) {
 
 //     } else {
 //         const arr = json.data
-        
+
 //         arr.forEach(element => {
 //             const scrImg = (element.images.original.url)
 //             pegaDiv.innerHTML = `
@@ -102,46 +101,47 @@ function mostraData(dados) {
 
 // }
 
-=======
+// ============= E
+const input = document.querySelector('#gifInput');
 const botao = document.querySelector('#gifButton');
-const div = document.querySelector('#root');
+const div = document.querySelector('#root')
+
 botao.addEventListener('click', (e) => fazerFetch(e));
 
 function fazerFetch(event) {
-  event.preventDefault();
-  const valorInput = input.value;
-  div.innerHTML = '';
-  input.value = ''
-  // console.log(valorInput);
-  const url = `http://api.giphy.com/v1/gifs/search?q=${valorInput}&api_key=dc6zaTOxFJmzC&limit=30&offset=0`
+    event.preventDefault();
+    const valorInput = input.value;
+    div.innerHTML = '';
+    input.value = ''
+        // console.log(valorInput);
+    const url = `http://api.giphy.com/v1/gifs/search?q=${valorInput}&api_key=dc6zaTOxFJmzC&limit=30&offset=0`
 
-  fetch(url)
-    .then(resposta => {
-      if (!resposta.ok) {
-        console.error(resposta.statusText);
-        mostrarErro(resposta.statusText);
-      }
-      return resposta.json()
-    })
-    .then(json => mostrarResultado(json))
-    .catch(e => mostrarErro(e))
+    fetch(url)
+        .then(resposta => {
+            if (!resposta.ok) {
+                console.error(resposta.statusText);
+                mostrarErro(resposta.statusText);
+            }
+            return resposta.json()
+        })
+        .then(json => mostrarResultado(json))
+        .catch(e => mostrarErro(e))
 }
 mostrarErro = (e) => {
-  div.innerHTML = `<h1>${e}</h1>`
+    div.innerHTML = `<h1>${e}</h1>`
 }
 
 function mostrarResultado(json) {
-  if (json.message) {
-    mostrarErro(json.message)
-  } else {
-    const arr = json.data
-    console.log(arr);
-    arr.forEach(element => {
-      const srcImg = element.images.original.url
-      div.innerHTML += `
+    if (json.message) {
+        mostrarErro(json.message)
+    } else {
+        const arr = json.data
+        console.log(arr);
+        arr.forEach(element => {
+            const srcImg = element.images.original.url
+            div.innerHTML += `
       <img src=${srcImg}>
       `
-    });
-  }
+        });
+    }
 }
->>>>>>> master
